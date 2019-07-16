@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Shapes Of Css</title>
+    <style>
+        .circle{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            border-radius: 100%;
+        }
+        .Oval{
+            width: 100px;  
+            height:50px;   
+            background-color: skyblue;
+            border-radius: 100px/50px;  
+        }
+        .TriangleUp{
+            width: 0px;   
+            height: 0px;   
+            border-bottom:50px solid skyblue; 
+            border-right:50px solid transparent; 
+            border-left:50px solid transparent;  
+        }
+    </style>
+</head>
+<body>
+    <h2> <center> the-shapes-of-css</center> </h2>
+    <hr style="border-style: double;color: aqua">
+    <p>
+        box-sizing:border-box;    // 已设定的高度和宽度<b>之内</b>添加内边距和边框      <br>
+        box-sizing:content-box;      // 已设定的高度和宽度<b>之外</b>添加内边距和边框
+    </p>
+    <hr>
+    <p>
+        圆：用到的属性：border-radius :100%;  <br>
+        例子： <br>  
+        代码如下：  <br>
+        <p>
+                width: 100px;   <br>
+                height: 100px;   <br>
+                background-color: skyblue;   <br>
+                border-radius: 100%;
+        </p>
+        <div class="circle"></div>
+        <hr>
+        <p>
+            椭圆：用到的属性：border-radius :100%/50%;  <br>
+            例子： <br>  
+            代码如下：  <br>
+            <p>
+                    width: 100px;   <br>
+                    height: 100px;   <br>
+                    background-color: skyblue;   <br>
+                    border-radius: 100%/50%;
+            </p>
+            <div class="Oval"></div>
+        </p>
+        <hr>
+        <p>
+                上三角形：用到的属性：border:1px solid transparent; <br>
+                三角形有上、下、左、右三角形，原理一样；  <br>
+                例子： <br>  
+                代码如下：  <br>
+                <p>
+                        width: 0px;   <br>
+                        height: 0px;   <br>
+                        border-bottom:10px solid skyblue;  <br>
+                        border-right:10px solid transparent;  <br>
+                        border-left:10px solid transparent;  
+                </p>
+                <div class="TriangleUp"></div>
+            </p>
+            <hr>
+</body>
+</html>
