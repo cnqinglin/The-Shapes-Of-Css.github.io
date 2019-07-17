@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The Shapes Of Css</title>
     <style>
+        *{
+            color: rgb(113, 241, 9);
+        }
         .circle{
             width: 100px;
             height: 100px;
@@ -25,6 +28,47 @@
             border-right:50px solid transparent; 
             border-left:50px solid transparent;  
         }
+        .TriangleBottomLeft{
+            width:0px;
+            height:0px;
+            border-bottom:50px solid skyblue;
+            border-right:50px solid transparent;
+        }
+        .yin-yang{
+            width:96px;
+            height:48px;
+            box-sizing:content-box;
+            background-color:white;
+            border-width:2px 2px 50px 2px;
+            border-style:solid;
+            border-color:skyblue;
+            border-radius:100%;
+             position:relative;  
+        }   
+        .yin-yang::before{
+            content:"";
+            box-sizing:content-box;
+            width:12px;
+            height:12px;
+            background-color:white;
+            border:18px solid skyblue;
+            top:50%;
+            left:0;
+            position:absolute;
+            border-radius:100%;
+        }
+        .yin-yang::after{
+            content:"";
+            box-sizing:content-box;
+            width:12px;
+            height:12px;
+            background-color:skyblue;
+            border:18px solid white ;
+            top:50%;
+            right:0;
+            position:absolute;
+            border-radius:100%;
+        }
     </style>
 </head>
 <body>
@@ -37,7 +81,8 @@
     <hr>
     <p>
         圆：用到的属性：border-radius :100%;  <br>
-        例子： <br>  
+        例子： <br>
+        <div class="circle"></div>  <br>  
         代码如下：  <br>
         <p>
                 width: 100px;   <br>
@@ -45,35 +90,96 @@
                 background-color: skyblue;   <br>
                 border-radius: 100%;
         </p>
-        <div class="circle"></div>
         <hr>
         <p>
             椭圆：用到的属性：border-radius :100%/50%;  <br>
             例子： <br>  
-            代码如下：  <br>
+            <div class="Oval"></div>   <br>
+        </p>
+        代码如下：  <br>
             <p>
                     width: 100px;   <br>
                     height: 100px;   <br>
                     background-color: skyblue;   <br>
                     border-radius: 100%/50%;
             </p>
-            <div class="Oval"></div>
-        </p>
         <hr>
         <p>
                 上三角形：用到的属性：border:1px solid transparent; <br>
-                三角形有上、下、左、右三角形，原理一样；  <br>
+                这样的三角形有上、下、左、右三角形，原理一样；  <br>   
+                <big>注意：这是正常三角形，都是由宽高为零的三个三角形组成的，正中间的三角形；</big>   <br>
                 例子： <br>  
+                <div class="TriangleUp"></div>  <br>    
                 代码如下：  <br>
-                <p>
+        <p>
                         width: 0px;   <br>
                         height: 0px;   <br>
                         border-bottom:10px solid skyblue;  <br>
                         border-right:10px solid transparent;  <br>
                         border-left:10px solid transparent;  
                 </p>
-                <div class="TriangleUp"></div>
-            </p>
             <hr>
+        <p>
+                左下角三角形：用到的属性：border:1px solid transparent; <br>
+                三角形有左上角、左下角、右上角、右下角三角形，原理一样；  <br>   
+        </p>
+                例子： <br>  
+                <div class="TriangleBottomLeft"></div>  <br>    
+                代码如下：  <br>
+        <p>
+                        width: 0px;   <br>
+                        height: 0px;   <br>
+                        border-bottom:10px solid skyblue;  <br>
+                        border-right:10px solid transparent;  <br>
+                        border-left:10px solid transparent;  
+        </p>
+            <hr>
+            <p>
+                    阴阳：用到的属性：box::after{} / box::before{}  / box-sizing:  / box-radius<br>
+                    例子： <br>  
+                    <div class="yin-yang"></div> 
+            </p>
+                    代码如下：  <br>
+            <p>
+                            width: 0px;   <br>
+                            height: 0px;   <br>
+                            border-bottom:10px solid skyblue;  <br>
+                            border-right:10px solid transparent;  <br>
+                            border-left:10px solid transparent;  
+            </p>
+            <hr style="border-style:double;">  
+        <h4>其他常用标签：</h4>
+        <ul>
+            <li>标注：descr </li>
+            <li>书名号：q </li>
+            <li>叠放：z-index   //正数越大越在上层 </li>
+            <li>单书名号：&l't； &gt; </li>
+            <li>鼠标滑过：：hover </li>
+            <li>伪类元素(仍然作为子元素，一般在其后或下面)： ::after </li>
+            <li>伪类元素(仍然作为子元素，一般在其前或上面)： ::before </li>
+            <li>
+                border 的一些变形属性：  <br>
+                <ol>
+                    <li> border-radius: //与圆有关 <p></p></li>
+                    <li> border-radius: 30px; //四个顶角  <p></p></li>
+                    <li> border-radius: 25px 10px  //上左和下右顶角为25px，上右和下左为10px <p></p></li>
+                    <li> border-radius: 2em 1em 3em  //三个参数的时候，是上左，上右和下左，下右<p></p></li>
+                    <li> border-radius: 10px 30px 50px 70px;  //参数顺序分别对应一二三四顶角 <p></p></li>
+                    <li> border-radius: 10px / 100px;   //第一个参数表示圆角的水平半径，第二个参数表示圆角的垂直半径 <p></p></li>
+                    <li> border-radius: 10px 100px / 30px; //10px表示上左和下右的水平角，100px表示上右和下左的水平角，30px表示四个顶角的垂直半径<p></p></li>
+                    <li> border-radius: 50px 20px / 10px 40px;  //一个值表示两个角<p></p></li>
+                    <li> <b>使用%表示数值的情况</b></li>
+                    <li style="list-style:none;"">
+                        <p><ol>
+                            <li>使用%来表示圆角值的时候，如果对象的宽和高是一样的，那判断方法与单位来表示的一样，只不过想象的时候，需要将宽高乘以百分数换算一下；</li>
+                            <li>使用%来表示圆角值的时候，如果宽高不一致，那产生的效果，其实就是以对象的宽高乘以百分数后得到的值r1和r2，作为两条半径绘制出来的椭圆产生的弧度。</li>
+                        </ol></p>
+                    </li>
+                </ol>
+            </li>
+            <li>border-width：0 0.3em 0.2em 0; </li>
+            <li>border-collapse: cpllapse/separate ；</li>
+        </ul>  
+        <center><span style="font-size: 20px;">持续更新中……</span></center>
 </body>
 </html>
