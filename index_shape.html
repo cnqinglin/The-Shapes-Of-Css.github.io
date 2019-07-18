@@ -34,6 +34,14 @@
             border-bottom:50px solid skyblue;
             border-right:50px solid transparent;
         }
+        @keyframes spin{
+            from{
+                 transform:rotate(0deg);
+                }
+            to{
+                transform:rotate(360deg);
+                }
+            }
         .yin-yang{
             width:96px;
             height:48px;
@@ -43,7 +51,11 @@
             border-style:solid;
             border-color:skyblue;
             border-radius:100%;
-             position:relative;  
+             position:relative;
+             animation-name:spin;
+            animation-duration:2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;  
         }   
         .yin-yang::before{
             content:"";
